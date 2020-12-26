@@ -1,26 +1,53 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <main class="main-container">
+    <div class="app-container">
+      <img class="app-logo" alt="Elk Tree logo" src="./assets/elkTree.png">
+    </div>
+    <HelloWorld msg="Welcome to Elk Tree Vue 3"/>
+    <Bracker bracker="Welcome Bracker Vue 3" />
+  </main>
+  
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
+import store from '@/store';
+
+import HelloWorld from './components/HelloWorld.vue';
+import Bracker from '@/components/Bracker.vue';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    HelloWorld,
+    Bracker
+  },
+  provide: {
+    store
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+
+.main-container {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
+
+.main-container > div.app-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app-logo {
+  width: 30vw;
+  height: 30vw;
+}
+
 </style>
