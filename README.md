@@ -20,6 +20,10 @@ npm run build
 npm run lint
 ```
 
+### Package usage
+
+* vue-router > 4 for vue 3.
+
 ### Note
 
 * ref() : 可以接受任何型態的資料，但是不會對物件或陣列內部的屬性變動做監聽。

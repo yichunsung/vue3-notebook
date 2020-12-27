@@ -1,10 +1,10 @@
 <template>
   <main class="main-container">
-    <div class="app-container">
-      <img class="app-logo" alt="Elk Tree logo" src="./assets/elkTree.png">
-    </div>
-    <HelloWorld msg="Welcome to Elk Tree Vue 3"/>
-    <Bracker bracker="Welcome Bracker Vue 3" />
+    <nav-bar></nav-bar>
+    <main class="app-container">
+      <router-view></router-view>
+    </main>
+    
   </main>
   
 </template>
@@ -12,15 +12,12 @@
 <script>
 
 import store from '@/store';
-
-import HelloWorld from './components/HelloWorld.vue';
-import Bracker from '@/components/Bracker.vue';
+import Navbar from '@/components/layouts/Navbar.vue';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld,
-    Bracker
+    'nav-bar': Navbar
   },
   provide: {
     store
@@ -38,11 +35,9 @@ export default {
   flex-wrap: wrap;
 }
 
-.main-container > div.app-container {
+.main-container > main.app-container {
   width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  margin-top: 7vh;
 }
 
 .app-logo {
